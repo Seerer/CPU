@@ -25,5 +25,15 @@ module EX(ALUCode_ex, ALUSrcA_ex, ALUSrcB_ex,Imm_ex, rs1Addr_ex, rs2Addr_ex, rs1
     output [31:0] MemWriteData_ex;
     output [31:0] ALU_A;
     output [31:0] ALU_B;
+//数据前推电路
+    wire [1:0] ForwardA, ForwardB;
+    assign ForwardA[0] = RegWrite_wb && (rdAddr_wb != 0) && (rdAddr_mem != rs1Addr_ex) && (rdAddr_wb == rs1Addr_ex);
+    assign ForwardA[1] = RegWrite_mem && (rdAddr_mem != 0) && (rdAddr_mem != rs1Addr_ex);
+    assign ForwardB[0] = RegWrite_wb && (rdAddr_wb != 0) && (rdAddr_mem != rs2Addr_ex) && (rdAddr_wb == rs2Addr_ex);
+    assign ForwardB[1] = RegWrite_mem && (rdAddr_mem != 0) && (rdAddr_mem != rs2Addr_ex);
 
+    assign ALU_A = (ForwardA == 2'b00)? rs1Data_ex : ((ForwardA == 2'b01) ? RegWriteData_wb : ALUResult_mem);
+    assign ALU_B = (ForwardB == 2'b00)? rs2Data_ex : ((ForwardB == 2'b01) ? RegWriteData_wb : ALUResult_mem);
+
+    ALU inst1 (.A(ALU_A), .B(ALU_B), .ALUCode(ALUCode_ex), .ALUResult(ALUResult_ex));
 endmodule
