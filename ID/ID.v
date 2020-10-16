@@ -38,5 +38,4 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
 //  module Hazard_Detector
     assign Stall = MemRead_ex && ((rdAddr_ex == rs1Addr_id) || (rdAddr_ex == rs2Addr_id));
     assign IFWrite = ~Stall;
- 
 endmodule
