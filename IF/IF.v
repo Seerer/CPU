@@ -3,7 +3,7 @@
 // Company:  zju
 // Engineer: qmj
 //////////////////////////////////////////////////////////////////////////////////
-module IF(clk, reset, Branch,Jump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush);
+module IF(clk, reset, Branch,J ump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush);
     input clk;
     input reset;
     input Branch;
@@ -14,4 +14,21 @@ module IF(clk, reset, Branch,Jump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush)
     output [31:0] PC;
     output IF_flush;
 
+    always @(posedge clk) begin
+    	if (reset) begin
+    		Instruction_if = 0;
+    		PC = 0;
+    		IF_flush = 1;
+    	end
+    	else begin
+    		case({Jump, Branch})
+	    		// 2'b00: PC = PC + 4;
+	    		// 2'b01: PC = JumpAddr;
+	    		// 2'b10: PC = 
+				default: PC = 0;
+			endcase
+
+    	end
+    end
+    InstructionROM inst1 (.addr(), .dout());
 endmodule
