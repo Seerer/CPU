@@ -3,7 +3,7 @@
 // Company:  zju
 // Engineer: qmj
 //////////////////////////////////////////////////////////////////////////////////
-module IF(clk, reset, Branch,J ump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush);
+module IF(clk, reset, Branch,Jump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush);
     input clk;
     input reset;
     input Branch;
