@@ -3,7 +3,7 @@
 // Company:  zju
 // Engineer: qmj
 //////////////////////////////////////////////////////////////////////////////////
-module IF(clk, reset, Branch,Jump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush);
+module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_flush);
     input clk;
     input reset;
     input Branch;
@@ -22,13 +22,12 @@ module IF(clk, reset, Branch,Jump, IFWrite, JumpAddr,Instruction_if,PC,IF_flush)
     	end
     	else begin
     		case({Jump, Branch})
-	    		// 2'b00: PC = PC + 4;
-	    		// 2'b01: PC = JumpAddr;
-	    		// 2'b10: PC = 
+	    		2'b00: PC = PC + 4;
+	    		2'b01: PC = JumpAddr;
+	    		2'b10: PC = JumpAddr; 
 				default: PC = 0;
 			endcase
-
     	end
     end
-    InstructionROM inst1 (.addr(), .dout());
+    InstructionROM inst1 (.addr(PC), .dout(Instruction_if));
 endmodule
