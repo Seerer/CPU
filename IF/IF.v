@@ -29,5 +29,6 @@ module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_fl
 			endcase
     	end
     end
+    PC pcreg (.IFWrite(IFWrite), .PCSource(PC), .PC(PC))
     InstructionROM inst1 (.addr(PC), .dout(Instruction_if));
 endmodule
