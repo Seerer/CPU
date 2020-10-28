@@ -15,6 +15,7 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     input [31:0] RegWriteData_wb;
     input MemRead_ex;
     input [4:0] rdAddr_ex;
+    input[4:0] rs1Addr_id,rs2Addr_id;
     output MemtoReg_id;
     output RegWrite_id;
     output MemWrite_id;
@@ -30,9 +31,9 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     output [31:0] Imm_id;
     output [31:0] rs1Data_id;
     output [31:0] rs2Data_id;
-	output[4:0] rs1Addr_id,rs2Addr_id,rdAddr_id;
-
-    RGBRegister register1(.clk(clk), .WriteRegister(rdAddr_wb), .WriteData(RegWriteData_wb), .RegWrite(RegWrite_wb), .ReadRegister1(), .ReadRegister2(), .ReadData1(rs1Data_id), .ReadData2(rs2Data_id));
+    output[4:0] rdAddr_id;
+	//output[4:0] rs1Addr_id,rs2Addr_id,rdAddr_id;
+    RGBRegister register1(.clk(clk), .WriteRegister(rdAddr_wb), .WriteData(RegWriteData_wb), .RegWrite(RegWrite_wb), .ReadRegister1(rs1Addr_id), .ReadRegister2(rs2Addr_id), .ReadData1(rs1Data_id), .ReadData2(rs2Data_id));
 
 
 //  module Hazard_Detector
