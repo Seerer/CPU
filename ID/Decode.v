@@ -7,7 +7,7 @@ module Decode(
 	// Outputs
 	MemtoReg, RegWrite, MemWrite, MemRead,ALUCode,ALUSrcA,ALUSrcB,Jump,JALR,Imm,offset,
 	// Inputs
-    Instruction, rs1Data, rs2Data, funct3, SB_type);
+   Instruction, rs1Data, rs2Data, funct3, SB_type);
 	input [31:0]	Instruction, rs1Data, rs2Data;	// current instruction
 	output		   MemtoReg;		// use memory output as data to write into register
 	output		   RegWrite;		// enable writing back to the register
@@ -103,6 +103,75 @@ module Decode(
    assign ALUSrcA = JALR || JAL || AUIPC;
    assign ALUSrcB[1] = JAL || JALR;
    assign ALUSrcB[0] = ~(R_type || JAL || JALR);
+//******************************************************************************   
+//ALUCode的确定
+//******************************************************************************
+   reg ALUCode;
+   always@(*) begin
+      if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o0 && funct6_7 == 0) begin
+         ALUCode = 4'd0;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o0 && funct6_7 == 1) begin
+         ALUCode = 4'd1;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o1 && funct6_7 == 0) begin
+         ALUCode = 4'd6;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o2 && funct6_7 == 0) begin
+         ALUCode = 4'd9;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o3 && funct6_7 == 0) begin
+         ALUCode = 4'd10;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o4 && funct6_7 == 0) begin
+         ALUCode = 4'd4;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 0) begin
+         ALUCode = 4'd7;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 1) begin
+         ALUCode = 4'd8;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o6 && funct6_7 == 0) begin
+         ALUCode = 4'd5;
+      end
+      else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o7 && funct6_7 == 0) begin
+         ALUCode = 4'd3;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o0) begin
+         ALUCode = 4'd0;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o1) begin
+         ALUCode = 4'd6;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o2) begin
+         ALUCode = 4'd9;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o3) begin
+         ALUCode = 4'd10;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o4) begin
+         ALUCode = 4'd4;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 0) begin
+         ALUCode = 4'd7;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 1) begin
+         ALUCode = 4'd8;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o6) begin
+         ALUCode = 4'd5;
+      end
+      else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o7) begin
+         ALUCode = 4'd3;
+      end
+      else if(R_type == 0 && I_type == 0 && LUI == 1) begin
+         ALUCode = 4'd2;
+      end
+      else begin
+         ALUCode = 4'd0;
+      end
+   end
 //******************************************************************************   
 //立即数产生电路的设计
 //******************************************************************************
