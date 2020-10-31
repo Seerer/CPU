@@ -181,33 +181,32 @@ module Decode(
    always @(posedge clk) begin
       if (I_type) begin
          if (Shift) 
-            Imm <= {26'd0, Instruction[25:20]};
+            Imm = {26'd0, Instruction[25:20]};
          else begin
-            Imm <= {{20{Instruction[31]}}, Instruction[31:20]};
+            Imm = {{20{Instruction[31]}}, Instruction[31:20]};
          end
       end
       else if (LW) begin
-         Imm <= {{20{Instruction[31]}}, Instruction[31:20]};
+         Imm = {{20{Instruction[31]}}, Instruction[31:20]};
       end 
       else if (JALR) begin
-         offset <= {{20{Instruction[31]}, Instruction[31:20]};
+         offset = {{20{Instruction[31]}, Instruction[31:20]};
       end
       else if (SW) begin
-         Imm <= {{20{Instruction[31]}}, Instruction[30:25], Instruction[11:7]};
+         Imm = {{20{Instruction[31]}}, Instruction[31:25], Instruction[11:7]};
       end
       else if (JAL) begin
-         offset <= {{11{Instruction[31]}}, Instruction[31], Instruction[19:12], Instruction[20], Instruction[30:21], 1'b0}; 
+         offset = {{11{Instruction[31]}}, Instruction[31], Instruction[19:12], Instruction[20], Instruction[30:21], 1'b0}; 
       end
       else begin
          if(LUI || AUIPC) begin
-            Imm <= {Instruction[31:12], 12'd0};
+            Imm = {Instruction[31:12], 12'd0};
          end
       end
       else begin
          if (SB_type) begin
-            offset <= {{19{Instruction[31]}}, Instruction[31], Instruction[7], Instruction[30:25], Instruction[11:8], 1'b0};
+            offset = {{19{Instruction[31]}}, Instruction[31], Instruction[7], Instruction[30:25], Instruction[11:8], 1'b0};
          end
       end
-   end
-	 
+   end 
 endmodule
