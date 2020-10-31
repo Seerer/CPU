@@ -41,5 +41,5 @@ module ALU (A, B, ALUCode, ALUResult);
 
 	assign slt = A[31] && (~B[31]) || (A[31]~^B[31]) && sum[31];
 	assign sltu = (~A[31]) && B[31] || (A[31]~^B[31]) && sum[31];
-	mux16_1 mux1(sum, sum, d2, d3, d4, d5, d6, d7, d8, slt, sltu, 0, 0, 0, 0, 0, , ALUCode, ALUResultU);
+	mux16_1 mux1(sum, sum, d2, d3, d4, d5, d6, d7, d8, slt, sltu, 0, 0, 0, 0, 0, , ALUCode, ALUResult);
 endmodule 
