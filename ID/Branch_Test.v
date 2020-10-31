@@ -31,28 +31,27 @@ module Branch_Test (rs1Data, rs2Data, Branch, funct3, SB_type);
 		if (SB_type) begin
 	    	case (funct3)
 		    	BEQ_funct3: begin
-		           	Branch <= ~|sum;  
+		           	Branch = ~(|sum[31:0]);
 		        end
 		        BNE_funct3: begin
-		            Branch <= |sum;
+		            Branch = |sum[31:0];
 		        end
 		        BLT_funct3: begin
-		            Branch <= isLT；
+		            Branch = isLT；
 		        end
 		        BGE_funct3: begin
-		            Branch <= ~isLT;
+		            Branch = ~isLT;
 		        end
 		        BLTU_funct3: begin
-		            Branch <= isLTU;
+		            Branch = isLTU;
 		        end
 		        BGEU_funct3: begin
-		            Branch <= ~isLTU;
+		            Branch = ~isLTU;
 		        end
 		        dafault: begin
-		            Branch <= 0;
+		            Branch = 0;
 		        end
 	        endcase
         end
 	end
-
 endmodule 
