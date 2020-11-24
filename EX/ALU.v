@@ -28,7 +28,7 @@ module ALU (A, B, ALUCode, ALUResult);
 	assign Binvert = {32{~(ALUCode == 0)}};
 	assign input_B = B^Binvert;
 
-	adder32_bits adder2(.a(A), .b(input_B), .ci(Binvert), .co(), .s(sum));
+	adder_32bits adder2(.a(A), .b(input_B), .ci(Binvert[0]), .co(), .s(sum));
 
 	assign d2 = B;
 	assign d3 = A & B;

@@ -7,8 +7,8 @@ module Decode(
 	// Outputs
 	MemtoReg, RegWrite, MemWrite, MemRead,ALUCode,ALUSrcA,ALUSrcB,Jump,JALR,Imm,offset,
 	// Inputs
-   Instruction, rs1Data, rs2Data, funct3, SB_type);
-	input [31:0]	Instruction, rs1Data, rs2Data;	// current instruction
+   Instruction);
+	input [31:0]	Instruction;	// current instruction
 	output		   MemtoReg;		// use memory output as data to write into register
 	output		   RegWrite;		// enable writing back to the register
 	output		   MemWrite;		// write to memory
@@ -76,13 +76,14 @@ module Decode(
 //******************************************************************************
 	wire [6:0]		op;
 	wire  	 	    funct6_7;
+   wire  [2:0] funct3;
 	assign op			= Instruction[6:0];
 	assign funct6_7		= Instruction[30];
  	assign funct3		= Instruction[14:12];
 //******************************************************************************
 //表示指令类型	
 //******************************************************************************
-   wire [6:0] R_type, I_type, LW, JALR, SW, LUI, AUIPC, JAL;
+   wire [6:0] R_type, I_type, LW, JALR, SW, LUI, AUIPC, JAL, SB_type;
    assign R_type = (op == R_type_op);
    assign I_type = (op == I_type_op);
    assign SB_type = (op == SB_type_op);
@@ -207,4 +208,9 @@ module Decode(
          end
       end
    end 
+
+   initial begin
+      offset = 0;
+      Imm = 0;
+   end
 endmodule

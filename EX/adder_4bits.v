@@ -8,7 +8,7 @@ module adder_4bits (a, b, ci, co, s);
 	wire [3:0]c, G, P;
 
 	assign G = a & b;
-	assign P = a + b;
+	assign P = a | b;
 	assign c[0] = G[0] | P[0]*ci;
 	assign c[1] = G[1] | P[1]*G[0] | P[1]*P[0]*ci;
 	assign c[2] = G[2] | P[2]*G[1] | P[2]*P[1]*G[0] | P[2]*P[1]*P[0]*ci;

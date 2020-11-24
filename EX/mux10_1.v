@@ -1,6 +1,7 @@
 module mux10_1 (a, b, c, d, e, f, g, h, i, j, sel, out);
 
-	input [31:0] a, b, c, d, e, f, g, h, i, j;
+	input [31:0] a, b, c, d, e, f, g, h;
+	input i, j;
 	input [3:0] sel;
 
 	output reg [31:0] out;

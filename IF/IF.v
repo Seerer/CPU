@@ -10,25 +10,23 @@ module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_fl
     input Jump;
     input IFWrite;
     input [31:0] JumpAddr;
-    output reg [31:0] Instruction_if;
+    output [31:0] Instruction_if;
     output reg [31:0] PC;
-    output reg IF_flush;
+    output IF_flush;
 
-    always @(posedge clk) begin
-    	if (reset) begin
-    		Instruction_if = 0;
-    		PC = 0;
-    		IF_flush = 1;
-    	end
-    	else begin
-    		case({Jump, Branch})
-	    		2'b00: PC = PC + 4;
-	    		2'b01: PC = JumpAddr;
-	    		2'b10: PC = JumpAddr; 
-				default: PC = 0;
-			endcase
-    	end
+    assign IF_flush = Jump|Branch;
+    always@(posedge clk & IFWrite) begin
+        if (IF_flush) begin
+            PC = JumpAddr;
+        end
+        else begin
+            PC = PC + 4;
+        end
     end
-    PC pcreg (.IFWrite(IFWrite), .PCSource(PC), .PC(PC))
+    always @(posedge clk & reset) begin
+        PC = 0;
+    end
     InstructionROM inst1 (.addr(PC), .dout(Instruction_if));
+    initial
+        PC = 0;
 endmodule
