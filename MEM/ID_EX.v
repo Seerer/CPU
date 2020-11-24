@@ -1,4 +1,4 @@
-module ID_EX_Reg(Reset, WB, Mem, EX, PC_id, Imm_id, rdAddr_id, rs1Addr_id, rs2Addr_id, rs1Data_id, rs2Data_id, WB_out, Mem_out, EX_out, PC_ex, Imm_out, rdAddr_ex, rs1Addr_out, rs2Addr_out, rs1Data_out, rs2Data_out);
+module ID_EX(Reset, WB, Mem, EX, PC_id, Imm_id, rdAddr_id, rs1Addr_id, rs2Addr_id, rs1Data_id, rs2Data_id, WB_out, Mem_out, EX_out, PC_ex, Imm_out, rdAddr_ex, rs1Addr_out, rs2Addr_out, rs1Data_out, rs2Data_out);
 input Reset;
 input [1:0] WB, Mem; //WB = MemtoReg_id + RegWrite_id  Mem = MemRead_id + MemWrite_id
 input [6:0] EX;      //EX = ALUCode_id + ALUSrcA_id + ALUSrcB_id

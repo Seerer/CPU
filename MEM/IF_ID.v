@@ -1,4 +1,4 @@
-module IF_ID_Reg(en, reset, PC, Instruction, PC_id, rsAddr_id);
+module IF_ID(en, reset, PC, Instruction, PC_id, rsAddr_id);
 	input en, reset;
 	input [31:0]PC, Instruction;
 	output reg [4:0]PC_id, rsAddr_id;
