@@ -8,7 +8,7 @@ module DataRAM (write_en, addr, Data_in, Data_out);
 
 	output reg [31:0] Data_out;
 //[word size] regname [array size]
-	reg [31:0] RAM[63:0]
+	reg [31:0] RAM[63:0];
 	
 	// always@(*) begin
 	// 	if(read_en)

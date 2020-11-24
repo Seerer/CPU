@@ -8,11 +8,11 @@ module Registers(clk, rs1Addr, rs2Addr, WriteAddr, RegWrite, WriteData, rs1Data,
 
 	wire rs1Sel, rs2Sel;
 
-	rs1Sel = RegWrite && (WriteAddr != 0) && (WriteAddr == rs1Addr);
-	rs2Sel = RegWrite && (WriteAddr != 0) && (WriteAddr == rs2Addr);
+	assign rs1Sel = RegWrite && (WriteAddr != 0) && (WriteAddr == rs1Addr);
+	assign rs2Sel = RegWrite && (WriteAddr != 0) && (WriteAddr == rs2Addr);
 
 	RGBRegisters r1(clk, WriteAddr, WriteData, RegWrite, rs1Addr, rs2Addr, rs1Data, rs2Data);
-	2_1mux mux1(rs1Data, WriteData, rs1Sel, rs1Data);
-	2_1mux mux1(rs2Data, WriteData, rs2Sel, rs2Data);
+	mux2_1 mux1(rs1Data, WriteData, rs1Sel, rs1Data);
+	mux2_1 mux2(rs2Data, WriteData, rs2Sel, rs2Data);
 endmodule
 

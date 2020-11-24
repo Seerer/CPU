@@ -21,7 +21,7 @@ module Decode(
    output [2:0]   funct3;
 	output         Jump;
 	output         JALR;
-	output[31:0]   Imm,offset;
+	output reg [31:0] Imm,offset;
 	
 //******************************************************************************
 //  instruction type decode
@@ -178,7 +178,7 @@ module Decode(
    wire Shift;
    assign Shift = (funct3 == 1) || (funct3 == 5);
 
-   always @(posedge clk) begin
+   always @(*) begin
       if (I_type) begin
          if (Shift) 
             Imm = {26'd0, Instruction[25:20]};
@@ -190,7 +190,7 @@ module Decode(
          Imm = {{20{Instruction[31]}}, Instruction[31:20]};
       end 
       else if (JALR) begin
-         offset = {{20{Instruction[31]}, Instruction[31:20]};
+         offset = {{20{Instruction[31]}}, Instruction[31:20]};
       end
       else if (SW) begin
          Imm = {{20{Instruction[31]}}, Instruction[31:25], Instruction[11:7]};
@@ -198,10 +198,8 @@ module Decode(
       else if (JAL) begin
          offset = {{11{Instruction[31]}}, Instruction[31], Instruction[19:12], Instruction[20], Instruction[30:21], 1'b0}; 
       end
-      else begin
-         if(LUI || AUIPC) begin
+      else if(LUI || AUIPC) begin
             Imm = {Instruction[31:12], 12'd0};
-         end
       end
       else begin
          if (SB_type) begin

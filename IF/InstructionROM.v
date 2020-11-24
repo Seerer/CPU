@@ -3,16 +3,16 @@
         jalr X31 later(X0)
 earlier:sw  X28, 0C(X0) 
 		lw  X29, 04(X6) 
-		slli  X5, X29, 2  		//Êý¾ÝÃ°ÏÕ
+		slli  X5, X29, 2  		//ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½
 		lw   X28, 04(X6) 
 		sltu X28,X6,X7	
 done:   jal X31,done 
-later:	bne X0, X0, end  		// ·ÖÖ§Ìõ¼þ²»³ÉÁ¢
+later:	bne X0, X0, end  		// ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         addi X5, X30, 42         
 		add  X6, X0, X31
-		sub X7, X5, X6		     //²Ù×÷AÒ»½×Êý¾ÝÏà¹Ø£¬²Ù×÷B¶þ½×Êý¾ÝÏà¹Ø
-		or	 X28, X7, X5  		//²Ù×÷AÒ»½×Êý¾ÝÏà¹Ø£¬²Ù×÷BÈý½×Êý¾ÝÏà¹Ø
-        beq X0, X0, earlier		// ·ÖÖ§Ìõ¼þ³ÉÁ¢
+		sub X7, X5, X6		     //ï¿½ï¿½ï¿½ï¿½AÒ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		or	 X28, X7, X5  		//ï¿½ï¿½ï¿½ï¿½AÒ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        beq X0, X0, earlier		// ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 end:    nop
 
 --------------------------------------------------------------------------*/
@@ -20,10 +20,6 @@ module InstructionROM(addr,dout);
 	input [5 : 0] addr;
 	output [31 : 0] dout;
 	reg [31 : 0] dout;
-
-	[63:0] IROM [31:0];
-	assign dout IROM[addr]
-
 	always @(*)
 		case (addr)
 			6'd0:   dout=32'h0000_3f37 ;//           lui X30,0x3000
@@ -34,7 +30,7 @@ module InstructionROM(addr,dout);
 			6'd5:   dout=32'h0043_2e03 ;//           lw   X28, 4(X6)
 			6'd6:   dout=32'h0073_3e33 ;//		     sltu X28,X6,X7 
 			6'd7:   dout=32'h0000_0f6f ;//	done:   jal X31,done
-			6'd8:   dout=32'h0000_1c63 ;//	later:	bne X0, X0, end  		// ·ÖÖ§Ìõ¼þ²»³ÉÁ¢
+			6'd8:   dout=32'h0000_1c63 ;//	later:	bne X0, X0, end  		// ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			6'd9:   dout=32'h042f_0293;//	        addi X5, X30, 42
 			6'd10:  dout=32'h01f0_0333 ;//          add  X6, X0, X31 
 			6'd11:  dout=32'h4062_83b3 ;//           sub X7, X5, X6

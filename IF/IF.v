@@ -10,9 +10,9 @@ module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_fl
     input Jump;
     input IFWrite;
     input [31:0] JumpAddr;
-    output [31:0] Instruction_if;
-    output [31:0] PC;
-    output IF_flush;
+    output reg [31:0] Instruction_if;
+    output reg [31:0] PC;
+    output reg IF_flush;
 
     always @(posedge clk) begin
     	if (reset) begin

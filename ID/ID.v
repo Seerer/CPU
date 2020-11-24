@@ -27,7 +27,7 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     output Branch;
     output Jump;
     output IFWrite;
-    output [31:0] JumpAdd;
+    output [31:0] JumpAddr;
     output [31:0] Imm_id;
     output [31:0] rs1Data_id;
     output [31:0] rs2Data_id;
@@ -44,6 +44,7 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
 //  module Hazard_Detector
     assign Stall = MemRead_ex && ((rdAddr_ex == rs1Addr_id) || (rdAddr_ex == rs2Addr_id));
     assign IFWrite = ~Stall;
+    assign JumpAddr = Imm_id + Jump?rs1Data_id:PC_id;
 endmodule
 
 

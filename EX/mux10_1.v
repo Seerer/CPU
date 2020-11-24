@@ -3,7 +3,7 @@ module mux10_1 (a, b, c, d, e, f, g, h, i, j, sel, out);
 	input [31:0] a, b, c, d, e, f, g, h, i, j;
 	input [3:0] sel;
 
-	output reg output;
+	output reg [31:0] out;
 
 	always @(sel) begin
 		case(sel)
