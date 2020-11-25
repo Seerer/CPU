@@ -31,14 +31,12 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     output [31:0] Imm_id;
     output [31:0] rs1Data_id;
     output [31:0] rs2Data_id;
-    output[4:0] rdAddr_id;
+    output[4:0] rs1Addr_id,rs2Addr_id,rdAddr_id;
 
     wire [2:0] funct3;
     wire [6:0] SB_type;
-	//output[4:0] rs1Addr_id,rs2Addr_id,rdAddr_id;
-    //RGBRegister register1(.clk(clk), .WriteRegister(rdAddr_wb), .WriteData(RegWriteData_wb), .RegWrite(RegWrite_wb), .ReadRegister1(rs1Addr_id), .ReadRegister2(rs2Addr_id), .ReadData1(rs1Data_id), .ReadData2(rs2Data_id));
+//  module register	
     Registers r1(.clk(clk), .rs1Addr(rs1Addr_id), .rs2Addr(rs2Addr_id), .WriteAddr(rdAddr_wb), .RegWrite(RegWrite_wb), .WriteData(RegWriteData_wb), .rs1Data(rs1Data_id), .rs2Data(rs2Data_id));
-    //Decode part remains questions!!!
     Decode d1(.MemtoReg(MemtoReg_id), .RegWrite(RegWrite_id), .MemWrite(MemWrite_id), .MemRead(MemRead_id), .ALUCode(ALUCode_id), .ALUSrcA(ALUSrcA_id), .ALUSrcB(ALUSrcB_id), .Jump(Jump), .JALR(Jump), .Imm(Imm_id), .offset(Imm_id), .Instruction(Instruction_id), .rs1Data(rs1Data_id), .rs2Data(rs2Data_id), .funct3(funct3), .SB_type(SB_type));
     Branch_Test b1(.rs1Data(rs1Data_id), .rs2Data(rs2Data_id), .Branch(Branch), .funct3(funct3), .SB_type(SB_type));
 //  module Hazard_Detector
