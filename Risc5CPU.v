@@ -73,7 +73,8 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
 
     EX_MEM top_module6(.WB(WB_out_ID_EX), .Mem(Mem_out_ID_EX), .ALU(ALUResult_ex), .MemWriteData_ex(MemWriteData_ex), .rdAddr_ex(rdAddr_ex), .WB_out_EX_MEM(WB_out_EX_MEM), .we(Mem_out_EX_MEM), .d(d), .ALUResult_mem(ALUResult_mem), .rdAddr_ex_out(rdAddr_mem));
 
-    DataRam top_module7(.write_en(Mem_out_EX_MEM), .addr(ALUResult_mem[7:2]), .Data_in(d), .Data_out(MemDout_mem));
+    DataRAM top_module7(.a(ALUResult_mem[7:2]), .d(d), .clk(clk), .we(Mem_out_EX_MEM), .spo(MemDout_mem));
+    //DataRam top_module7(.write_en(Mem_out_EX_MEM), .addr(ALUResult_mem[7:2]), .Data_in(d), .Data_out(MemDout_mem));
 
     MEM_WB top_module8(.WB(WB_out_EX_MEM), .MemDout(MemDout), .ALU(ALUResult_mem), .rdAddr_ex(rdAddr_mem), .WB_out_MEM_WB(WB_out_MEM_WB), .out1(out1), .out2(out2), .rdAddr_wb(rdAddr_wb));
     
