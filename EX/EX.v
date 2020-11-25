@@ -34,7 +34,6 @@ module EX(ALUCode_ex, ALUSrcA_ex, ALUSrcB_ex,Imm_ex, rs1Addr_ex, rs2Addr_ex, rs1
 
     assign ALU_A = (ForwardA == 2'b00)? rs1Data_ex : ((ForwardA == 2'b01) ? RegWriteData_wb : ALUResult_mem);
     assign ALU_B = (ForwardB == 2'b00)? rs2Data_ex : ((ForwardB == 2'b01) ? RegWriteData_wb : ALUResult_mem);
-    
+    assign MemWriteData_ex = ALU_B;
     ALU a1 (.A(ALU_A), .B(ALU_B), .ALUCode(ALUCode_ex), .ALUResult(ALUResult_ex));
-    DataRam d1 (.write_en(RegWrite_mem), .addr(ALUResult_mem[7:2]), .Data_in(ALUResult_ex), .Data_out(MemWriteData_ex));
 endmodule
