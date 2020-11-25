@@ -17,8 +17,6 @@ module Decode(
 	output      	ALUSrcA;
 	output [1:0]   ALUSrcB;
 
-   output [6:0]   SB_type;
-   output [2:0]   funct3;
 	output         Jump;
 	output         JALR;
 	output reg [31:0] Imm,offset;
@@ -94,7 +92,8 @@ module Decode(
    assign AUIPC = (op == AUIPC_op);
    assign JAL = (op == JAL_op);
 
-   assign MemtoReg = MemRead = LW;
+   assign MemtoReg = LW;
+   assign MemRead = LW;
    assign MemWrite = SW;
    assign RegWrite = R_type || I_type || LW || JALR || LUI || AUIPC || JAL;
    assign Jump = JALR || JAL;
