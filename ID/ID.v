@@ -39,7 +39,7 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     Registers r1(.clk(clk), .rs1Addr(rs1Addr_id), .rs2Addr(rs2Addr_id), .WriteAddr(rdAddr_wb), .RegWrite(RegWrite_wb), .WriteData(RegWriteData_wb), .rs1Data(rs1Data_id), .rs2Data(rs2Data_id));
     Decode d1(.MemtoReg(MemtoReg_id), .RegWrite(RegWrite_id), .MemWrite(MemWrite_id), .MemRead(MemRead_id), .ALUCode(ALUCode_id), .ALUSrcA(ALUSrcA_id), .ALUSrcB(ALUSrcB_id), .Jump(Jump), .JALR(Jump), .Imm(Imm_id), .offset(Imm_id), .Instruction(Instruction_id), .rs1Data(rs1Data_id), .rs2Data(rs2Data_id), .funct3(funct3), .SB_type(SB_type));
     Branch_Test b1(.rs1Data(rs1Data_id), .rs2Data(rs2Data_id), .Branch(Branch), .funct3(funct3), .SB_type(SB_type));
-//  module Hazard_Detector
+//  module Hazard_Detector (get MemRead_ex from ID_EX MEM)
     assign Stall = MemRead_ex && ((rdAddr_ex == rs1Addr_id) || (rdAddr_ex == rs2Addr_id));
     assign IFWrite = ~Stall;
     assign JumpAddr = Imm_id + Jump?rs1Data_id:PC_id;

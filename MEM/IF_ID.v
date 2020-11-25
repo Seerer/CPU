@@ -1,13 +1,14 @@
-module IF_ID(en, reset, PC, Instruction, PC_id, rsAddr_id);
+module IF_ID(en, reset, PC, Instruction_if, PC_id, Instruction_id);
 	input en, reset;
-	input [31:0]PC, Instruction;
-	output reg [4:0]PC_id, rsAddr_id;
+	input [31:0]PC, Instruction_if;
+	output reg [31:0]PC_id, Instruction_id;
 	always@(*) begin
 		if (reset) begin
-			rsAddr_id = 0; PC_id = 0;
+			Instruction_id = 0; PC_id = 0;
 		end		
 		else if (en) begin
-			rsAddr_id = Instruction; PC_id = PC;
+			Instruction_id = Instruction_if; 
+			PC_id = PC;
 		end
 	end
 endmodule
