@@ -31,7 +31,7 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     output [31:0] Imm_id;
     output [31:0] rs1Data_id;
     output [31:0] rs2Data_id;
-    output[4:0] rs1Addr_id,rs2Addr_id,rdAddr_id;
+    output[4:0] rdAddr_id;
 
     wire [2:0] funct3;
     wire [6:0] SB_type;
