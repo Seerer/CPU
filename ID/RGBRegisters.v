@@ -1,4 +1,4 @@
-module RGWRegisters(clk, WriteRegister, WriteData, RegWrite, ReadRegister1, ReadRegister2, ReadData1, ReadData2);
+module RGBRegisters(clk, WriteRegister, WriteData, RegWrite, ReadRegister1, ReadRegister2, ReadData1, ReadData2);
 	input RegWrite, clk; 
 	input [31:0] WriteData, ReadData1, ReadData2;
 	input [4:0] WriteRegister, ReadRegister1, ReadRegister2;

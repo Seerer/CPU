@@ -1,4 +1,4 @@
-module MEM_MB(WB, MemDout, ALU, rdAddr_ex, WB_out_MEM_WB, out1, out2, rdAddr_wb);
+module MEM_WB(WB, MemDout, ALU, rdAddr_ex, WB_out_MEM_WB, out1, out2, rdAddr_wb);
 input [1:0] WB;
 input [31:0] MemDout, ALU;
 input [4:0] rdAddr_ex;

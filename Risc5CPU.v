@@ -25,7 +25,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
     wire [31:0] JumpAddr, Imm_id, rs1Data_id, rs2Data_id;
 
     //IF module parameters
-    wire [31:0] Instruction_if, PC_id, Instruction_id
+    wire [31:0] Instruction_if, PC_id, Instruction_id;
 
     //ID_EX parameters
     wire [1:0] Mem_out_ID_EX;//=MemRead_ex+MemWrite_ex
