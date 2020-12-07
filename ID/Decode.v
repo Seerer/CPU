@@ -5,7 +5,7 @@
 
 module Decode(   
 	// Outputs
-	MemtoReg, RegWrite, MemWrite, MemRead,ALUCode,ALUSrcA,ALUSrcB,Jump,JALR,Imm,offset,
+	MemtoReg, RegWrite, MemWrite, MemRead,ALUCode,ALUSrcA,ALUSrcB,Jump,JALR,SB_type,Imm,offset,
 	// Inputs
    Instruction);
 	input [31:0]	Instruction;	// current instruction
@@ -19,6 +19,7 @@ module Decode(
 
 	output         Jump;
 	output         JALR;
+   output         SB_type;
 	output reg [31:0] Imm,offset;
 	
 //******************************************************************************
@@ -81,7 +82,7 @@ module Decode(
 //******************************************************************************
 //表示指令类型	
 //******************************************************************************
-   wire [6:0] R_type, I_type, LW, JALR, SW, LUI, AUIPC, JAL, SB_type;
+   wire R_type, I_type, LW, SW, LUI, AUIPC, JAL;
    assign R_type = (op == R_type_op);
    assign I_type = (op == I_type_op);
    assign SB_type = (op == SB_type_op);
