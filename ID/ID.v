@@ -15,7 +15,7 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     input [31:0] RegWriteData_wb;
     input MemRead_ex;
     input [4:0] rdAddr_ex;
-    input[4:0] rs1Addr_id,rs2Addr_id;
+    output[4:0] rs1Addr_id,rs2Addr_id;
     output MemtoReg_id;
     output RegWrite_id;
     output MemWrite_id;
@@ -38,6 +38,10 @@ module ID(clk,Instruction_id, PC_id, RegWrite_wb, rdAddr_wb, RegWriteData_wb, Me
     wire [31:0] offset;
     wire JALR;
 
+// assign id
+    assign rs1Addr_id = Instruction_id[19:15];
+    assign rs2Addr_id = Instruction_id[24:20];
+    assign rdAddr_id = Instruction_id[11:7];
 //  module register	
     Registers r1(.clk(clk), .rs1Addr(rs1Addr_id), .rs2Addr(rs2Addr_id), .WriteAddr(rdAddr_wb), .RegWrite(RegWrite_wb), .WriteData(RegWriteData_wb), .rs1Data(rs1Data_id), .rs2Data(rs2Data_id));
     Decode d1(.MemtoReg(MemtoReg_id), .RegWrite(RegWrite_id), .MemWrite(MemWrite_id), .MemRead(MemRead_id), .ALUCode(ALUCode_id), .ALUSrcA(ALUSrcA_id), .ALUSrcB(ALUSrcB_id), .Jump(Jump), .JALR(JALR), .SB_type(SB_type), .Imm(Imm_id), .offset(offset), .Instruction(Instruction_id));

@@ -107,72 +107,73 @@ module Decode(
 //******************************************************************************   
 //ALUCode的确定
 //******************************************************************************
-   reg ALUCode;
+   reg [3:0] ALUCode1;
    always@(*) begin
       if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o0 && funct6_7 == 0) begin
-         ALUCode = 4'd0;
+         ALUCode1 = 4'd0;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o0 && funct6_7 == 1) begin
-         ALUCode = 4'd1;
+         ALUCode1 = 4'd1;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o1 && funct6_7 == 0) begin
-         ALUCode = 4'd6;
+         ALUCode1 = 4'd6;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o2 && funct6_7 == 0) begin
-         ALUCode = 4'd9;
+         ALUCode1 = 4'd9;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o3 && funct6_7 == 0) begin
-         ALUCode = 4'd10;
+         ALUCode1 = 4'd10;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o4 && funct6_7 == 0) begin
-         ALUCode = 4'd4;
+         ALUCode1 = 4'd4;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 0) begin
-         ALUCode = 4'd7;
+         ALUCode1 = 4'd7;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 1) begin
-         ALUCode = 4'd8;
+         ALUCode1 = 4'd8;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o6 && funct6_7 == 0) begin
-         ALUCode = 4'd5;
+         ALUCode1 = 4'd5;
       end
       else if(R_type == 1 && I_type == 0 && LUI == 0 && funct3 == 3'o7 && funct6_7 == 0) begin
-         ALUCode = 4'd3;
+         ALUCode1 = 4'd3;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o0) begin
-         ALUCode = 4'd0;
+         ALUCode1 = 4'd0;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o1) begin
-         ALUCode = 4'd6;
+         ALUCode1 = 4'd6;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o2) begin
-         ALUCode = 4'd9;
+         ALUCode1 = 4'd9;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o3) begin
-         ALUCode = 4'd10;
+         ALUCode1 = 4'd10;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o4) begin
-         ALUCode = 4'd4;
+         ALUCode1 = 4'd4;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 0) begin
-         ALUCode = 4'd7;
+         ALUCode1 = 4'd7;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o5 && funct6_7 == 1) begin
-         ALUCode = 4'd8;
+         ALUCode1 = 4'd8;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o6) begin
-         ALUCode = 4'd5;
+         ALUCode1 = 4'd5;
       end
       else if(R_type == 0 && I_type == 1 && LUI == 0 && funct3 == 3'o7) begin
-         ALUCode = 4'd3;
+         ALUCode1 = 4'd3;
       end
       else if(R_type == 0 && I_type == 0 && LUI == 1) begin
-         ALUCode = 4'd2;
+         ALUCode1 = 4'd2;
       end
       else begin
-         ALUCode = 4'd0;
+         ALUCode1 = 4'd0;
       end
    end
+   assign ALUCode = ALUCode1;
 //******************************************************************************   
 //立即数产生电路的设计
 //******************************************************************************

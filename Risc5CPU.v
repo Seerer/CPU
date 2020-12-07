@@ -7,7 +7,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
                      ALU_B, ALUResult_ex, PC, MemDout_mem,Stall);
     input clk;
     input reset;
-    output[1:0] JumpFlag;
+    output [1:0]  JumpFlag;//Jump + Branch
     output [31:0] Instruction_id;
     output [31:0] ALU_A;
     output [31:0] ALU_B;
@@ -18,10 +18,10 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
 
     //ID module parameters
     wire MemtoReg_id, RegWrite_id, MemWrite_id, MemRead_id, ALUSrcA_id,
-        Stall, Branch, Jump, IFWrite;
+        Stall, IFWrite;
     wire [1:0] ALUSrcB_id;
     wire [3:0] ALUCode_id;
-    wire [4:0] rs1Addr_id,rs2Addr_id,rdAddr_id;
+    wire [4:0] rs1Addr_id, rs2Addr_id, rdAddr_id;
     wire [31:0] JumpAddr, Imm_id, rs1Data_id, rs2Data_id;
 
     //IF module parameters
@@ -55,17 +55,17 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
 
     //IF output Instruction_if and then go through IF_ID to get instuction_id 
     //(Also from Instruction_id taking out rdAddr_id, rs1Addr_id, rs2Addr_id)
-    IF top_module1(.clk(clk), .reset(reset), .Branch(Branch), .Jump(Jump),
+    IF top_module1(.clk(clk), .reset(reset), .Branch(JumpFlag[0]), .Jump(JumpFlag[1]),
             .IFWrite(IFWrite), .JumpAddr(JumpAddr), .Instruction_if(Instruction_if), .PC(PC), .IF_flush(IF_flush));
 
-    IF_ID top_module2(.en(IFWrite), .reset(IF_flush), .PC(PC), .Instruction_if(Instruction_if), .PC_id(PC_id), .Instruction_id(Instruction_id));
+    IF_ID top_module2(.en(IFWrite), .reset(IF_flush||reset), .PC(PC), .Instruction_if(Instruction_if), .PC_id(PC_id), .Instruction_id(Instruction_id));
     //data like RegWrite_wb come from ex(forwarding part)
     ID top_module3(.clk(clk), .Instruction_id(Instruction_id), .PC_id(PC_id), .RegWrite_wb(WB_out_MEM_WB[0]), .rdAddr_wb(rdAddr_wb), .RegWriteData_wb(RegWriteData_wb), .MemRead_ex(Mem_out_ID_EX[0]), 
           .rdAddr_ex(rdAddr_ex), .MemtoReg_id(MemtoReg_id), .RegWrite_id(RegWrite_id), .MemWrite_id(MemWrite_id), .MemRead_id(MemRead_id), .ALUCode_id(ALUCode_id), 
-			 .ALUSrcA_id(ALUSrcA_id), .ALUSrcB_id(ALUSrcB_id), .Stall(Stall), .Branch(Branch), .Jump(Jump), .IFWrite(IFWrite), .JumpAddr(JumpAddr), .Imm_id(Imm_id),
+			 .ALUSrcA_id(ALUSrcA_id), .ALUSrcB_id(ALUSrcB_id), .Stall(Stall), .Branch(JumpFlag[0]), .Jump(JumpFlag[1]), .IFWrite(IFWrite), .JumpAddr(JumpAddr), .Imm_id(Imm_id),
 			 .rs1Data_id(rs1Data_id), .rs2Data_id(rs2Data_id), .rs1Addr_id(rs1Addr_id), .rs2Addr_id(rs2Addr_id), .rdAddr_id(rdAddr_id));
 
-    ID_EX top_module4(.Reset(Stall), .WB({MemtoReg_id,RegWrite_id}), .Mem({MemWrite_id,MemRead_id}), .EX({ALUCode_id, ALUSrcA_id, ALUSrcB_id}), .PC_id(PC_id), .Imm_id(Imm_id), .rdAddr_id(rdAddr_id), .rs1Addr_id(rs1Addr_id), .rs2Addr_id(rs2Addr_id), .rs1Data_id(rs1Data_id), .rs2Data_id(rs2Data_id),
+    ID_EX top_module4(.Reset(Stall||reset), .WB({MemtoReg_id,RegWrite_id}), .Mem({MemWrite_id,MemRead_id}), .EX({ALUCode_id, ALUSrcA_id, ALUSrcB_id}), .PC_id(PC_id), .Imm_id(Imm_id), .rdAddr_id(rdAddr_id), .rs1Addr_id(rs1Addr_id), .rs2Addr_id(rs2Addr_id), .rs1Data_id(rs1Data_id), .rs2Data_id(rs2Data_id),
              .WB_out_ID_EX(WB_out_ID_EX), .Mem_out_ID_EX(Mem_out_ID_EX), .EX_out(EX_out), .PC_ex(PC_ex), .Imm_ex(Imm_ex), .rdAddr_ex(rdAddr_ex), .rs1Addr_ex(rs1Addr_ex), .rs2Addr_ex(rs2Addr_ex), .rs1Data_ex(rs1Data_ex), .rs2Data_ex(rs2Data_ex));
 
     EX top_module5(.ALUCode_ex(EX_out[6:3]), .ALUSrcA_ex(EX_out[2]), .ALUSrcB_ex(EX_out[1:0]), .Imm_ex(Imm_ex), .rs1Addr_ex(rs1Addr_ex), .rs2Addr_ex(rs2Addr_ex), .rs1Data_ex(rs1Data_ex), 

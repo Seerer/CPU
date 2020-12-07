@@ -1,8 +1,8 @@
 module RGBRegisters(clk, WriteRegister, WriteData, RegWrite, ReadRegister1, ReadRegister2, ReadData1, ReadData2);
 	input RegWrite, clk; 
-	input [31:0] WriteData, ReadData1, ReadData2;
+	input [31:0] WriteData;
 	input [4:0] WriteRegister, ReadRegister1, ReadRegister2;
-
+	output [31:0] ReadData1, ReadData2;
 	reg [31:0]regs [31:0];
 
 	assign ReadData1 = (ReadRegister1 == 5'b0) ? 32'b0 : regs[ReadRegister1];
