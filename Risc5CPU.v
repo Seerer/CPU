@@ -25,6 +25,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
     wire [31:0] JumpAddr, Imm_id, rs1Data_id, rs2Data_id;
 
     //IF module parameters
+    wire IF_flush;
     wire [31:0] Instruction_if, PC_id, Instruction_id;
 
     //ID_EX parameters
