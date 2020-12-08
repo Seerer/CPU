@@ -6,7 +6,7 @@ module mux10_1 (a, b, c, d, e, f, g, h, i, j, sel, out);
 
 	output reg [31:0] out;
 
-	always @(sel) begin
+	always @(*) begin
 		case(sel)
 			4'b0000: out = a;
 			4'b0001: out = a;

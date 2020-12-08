@@ -7,7 +7,7 @@ module Decode(
 	// Outputs
 	MemtoReg, RegWrite, MemWrite, MemRead,ALUCode,ALUSrcA,ALUSrcB,Jump,JALR,SB_type,Imm,offset,
 	// Inputs
-   Instruction);
+   Instruction,funct3);
 	input [31:0]	Instruction;	// current instruction
 	output		   MemtoReg;		// use memory output as data to write into register
 	output		   RegWrite;		// enable writing back to the register
@@ -20,6 +20,7 @@ module Decode(
 	output         Jump;
 	output         JALR;
    output         SB_type;
+   output [2:0]   funct3;
 	output reg [31:0] Imm,offset;
 	
 //******************************************************************************
@@ -75,7 +76,7 @@ module Decode(
 //******************************************************************************
 	wire [6:0]		op;
 	wire  	 	    funct6_7;
-   wire  [2:0] funct3;
+
 	assign op			= Instruction[6:0];
 	assign funct6_7		= Instruction[30];
  	assign funct3		= Instruction[14:12];

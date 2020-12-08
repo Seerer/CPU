@@ -26,7 +26,7 @@ module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_fl
     always @(posedge clk & reset) begin
         PC = 0;
     end
-    InstructionROM inst1 (.addr(PC), .dout(Instruction_if));
+    InstructionROM inst1 (.addr(PC>>2), .dout(Instruction_if));
     initial
         PC = 0;
 endmodule

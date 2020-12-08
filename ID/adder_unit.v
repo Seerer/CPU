@@ -8,10 +8,10 @@ module adder_unit (a, b, ci, co, s);
 	wire [3:0]s1, s2;
 	wire andout;
 
-	adder_4bits inst1(.a(a), .b(b), .ci(1'b1), .co(co1), .s(s1));
-	adder_4bits inst2(.a(a), .b(b), .ci(1'b0), .co(co2), .s(s2));
+	adder_4bits inst1(.a(a), .b(b), .ci(1'b0), .co(co1), .s(s1));
+	adder_4bits inst2(.a(a), .b(b), .ci(1'b1), .co(co2), .s(s2));
 
 	mux2_1 mux1(.sel(ci), .in1(s1), .in2(s2), .co(s));
-	and G1(andout, co1, ci);
-	or G2(co, andout, co2);
+	and G1(andout, co2, ci);
+	or G2(co, andout, co1);
 endmodule

@@ -20,5 +20,4 @@ module adder_4bits (a, b, ci, co, s);
 	assign s[3] = a[3] + b[3] +c[2];
 
 	assign co = c[3];
-
 endmodule

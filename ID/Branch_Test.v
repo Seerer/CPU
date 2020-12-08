@@ -4,9 +4,9 @@
 module Branch_Test (rs1Data, rs2Data, Branch, funct3, SB_type);
 	input [31:0] rs1Data, rs2Data;
 	input [2:0] funct3;
-	input [6:0] SB_type;
+	input SB_type;
 
-	output reg Branch;
+	output reg Branch = 0;
 
 	parameter  BEQ_funct3 =       3'b000;
 	parameter  BNE_funct3 =       3'b001;

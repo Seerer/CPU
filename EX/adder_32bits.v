@@ -14,5 +14,4 @@ module adder_32bits(a, b, ci, co, s);
 	adder_unit u5(a[23:20], b[23:20], cout5, cout6, s[23:20]);
 	adder_unit u6(a[27:24], b[27:24], cout6, cout7, s[27:24]);
 	adder_unit u7(a[31:28], b[31:28], cout7, co, s[31:28]);
-
 endmodule
