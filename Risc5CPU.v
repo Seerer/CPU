@@ -68,7 +68,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
 			    .ALUSrcA_id(ALUSrcA_id), .ALUSrcB_id(ALUSrcB_id), .Stall(Stall), .Branch(JumpFlag[0]), .Jump(JumpFlag[1]), 
                 .IFWrite(IFWrite), .JumpAddr(JumpAddr), .Imm_id(Imm_id), .rs1Data_id(rs1Data_id), .rs2Data_id(rs2Data_id), 
                 .rs1Addr_id(rs1Addr_id), .rs2Addr_id(rs2Addr_id), .rdAddr_id(rdAddr_id));
-
+    
     ID_EX top_module4(.Reset(Stall||reset), .WB({MemtoReg_id,RegWrite_id}), .Mem({MemWrite_id,MemRead_id}), 
                 .EX({ALUCode_id, ALUSrcA_id, ALUSrcB_id}), .PC_id(PC_id), .Imm_id(Imm_id), .rdAddr_id(rdAddr_id), 
                 .rs1Addr_id(rs1Addr_id), .rs2Addr_id(rs2Addr_id), .rs1Data_id(rs1Data_id), .rs2Data_id(rs2Data_id), 
@@ -85,7 +85,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
                 .rdAddr_ex(rdAddr_ex), .WB_out_EX_MEM(WB_out_EX_MEM), .we(Mem_out_EX_MEM), .d(d), .ALUResult_mem(ALUResult_mem), 
                 .rdAddr_ex_out(rdAddr_mem), .clk(clk), .reset(reset));
 
-    DataRAM top_module7(.a(ALUResult_mem[7:2]), .d(d), .clk(clk), .we(Mem_out_EX_MEM), .spo(MemDout_mem));
+    DataRAM top_module7(.a(ALUResult_mem), .d(d), .clk(clk), .we(Mem_out_EX_MEM), .spo(MemDout_mem));
     //DataRam top_module7(.write_en(Mem_out_EX_MEM), .addr(ALUResult_mem[7:2]), .Data_in(d), .Data_out(MemDout_mem));
 
     MEM_WB top_module8(.WB(WB_out_EX_MEM), .MemDout(MemDout_mem), .ALU(ALUResult_mem), .rdAddr_ex(rdAddr_mem), 

@@ -15,15 +15,17 @@ module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_fl
     output IF_flush;
 
     assign IF_flush = Jump|Branch;
-    always@(posedge clk & IFWrite) begin
-        if (IF_flush) begin
-            PC = JumpAddr;
-        end
-        else if (reset) begin
-            PC = 0;
-        end
-        else begin
-            PC = PC + 4;
+    always@(posedge clk) begin
+        if (IFWrite) begin
+            if (IF_flush) begin
+                PC = JumpAddr;
+            end
+            else if (reset) begin
+                PC = 0;
+            end
+            else begin
+                PC = PC + 4;
+            end            
         end
     end
     InstructionROM inst1 (.addr(PC>>2), .dout(Instruction_if));

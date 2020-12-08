@@ -11,7 +11,7 @@ module ID_EX(Reset, WB, Mem, EX, PC_id, Imm_id, rdAddr_id, rs1Addr_id, rs2Addr_i
     output reg [31:0] PC_ex, Imm_ex, rs1Data_ex, rs2Data_ex;
     output reg [4:0] rdAddr_ex, rs1Addr_ex, rs2Addr_ex;
 
-    always@(posedge clk) begin
+    always@(posedge clk) begin 
         if (Reset) begin
             WB_out_ID_EX = 0;
             Mem_out_ID_EX = 0;

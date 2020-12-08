@@ -14,15 +14,11 @@ module Branch_Test (rs1Data, rs2Data, Branch, funct3, SB_type);
 	parameter  BGE_funct3 =       3'b101;
 	parameter  BLTU_funct3 =      3'b110;
 	parameter  BGEU_funct3 =      3'b111;
-	parameter  LW_funct3 =        3'b010;
-	parameter  LH_funct3 =        3'b001;
-	parameter  LB_funct3 =        3'b000;
-	parameter  SW_funct3 =        3'b010;
 
 	wire [31:0]sum;
 	wire isLT, isLTU;
 
-	adder_32bits adder1(.a(rs1Data), .b(~rs2Data), .ci(1), .co(), .s(sum));
+	adder_32bits adder1(.a(rs1Data), .b(~rs2Data+1), .ci(0), .co(), .s(sum));
 
 	assign isLT = rs1Data[31] && (~rs2Data[31]) || (rs1Data[31]~^rs2Data[31]) && sum[31];
 	assign isLTU = (~rs1Data[31]) && rs2Data[31] || (rs1Data[31]~^rs2Data[31]) && sum[31];
@@ -53,5 +49,8 @@ module Branch_Test (rs1Data, rs2Data, Branch, funct3, SB_type);
 		        end
 	        endcase
         end
+		else begin
+			Branch = 0;
+		end
 	end
 endmodule 

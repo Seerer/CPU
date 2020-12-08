@@ -29,9 +29,9 @@ module EX(ALUCode_ex, ALUSrcA_ex, ALUSrcB_ex,Imm_ex, rs1Addr_ex, rs2Addr_ex, rs1
     wire [1:0] ForwardA, ForwardB;
     wire [31:0] tempA, tempB;
     assign ForwardA[0] = RegWrite_wb && (rdAddr_wb != 0) && (rdAddr_mem != rs1Addr_ex) && (rdAddr_wb == rs1Addr_ex);
-    assign ForwardA[1] = RegWrite_mem && (rdAddr_mem != 0) && (rdAddr_mem != rs1Addr_ex);
+    assign ForwardA[1] = RegWrite_mem && (rdAddr_mem != 0) && (rdAddr_mem == rs1Addr_ex);
     assign ForwardB[0] = RegWrite_wb && (rdAddr_wb != 0) && (rdAddr_mem != rs2Addr_ex) && (rdAddr_wb == rs2Addr_ex);
-    assign ForwardB[1] = RegWrite_mem && (rdAddr_mem != 0) && (rdAddr_mem != rs2Addr_ex);
+    assign ForwardB[1] = RegWrite_mem && (rdAddr_mem != 0) && (rdAddr_mem == rs2Addr_ex);
 
 
     assign tempA = (ForwardA == 2'b00)? rs1Data_ex : ((ForwardA == 2'b01) ? RegWriteData_wb : ALUResult_mem);
