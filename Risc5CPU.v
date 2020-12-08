@@ -78,7 +78,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
     EX top_module5(.ALUCode_ex(EX_out[6:3]), .ALUSrcA_ex(EX_out[2]), .ALUSrcB_ex(EX_out[1:0]), .Imm_ex(Imm_ex), 
                 .rs1Addr_ex(rs1Addr_ex), .rs2Addr_ex(rs2Addr_ex), .rs1Data_ex(rs1Data_ex), .rs2Data_ex(rs2Data_ex), .PC_ex(PC_ex), 
                 .RegWriteData_wb(RegWriteData_wb), .ALUResult_mem(ALUResult_mem), .rdAddr_mem(rdAddr_mem), .rdAddr_wb(rdAddr_wb), 
-		        .RegWrite_mem(WB_out_EX_MEM), .RegWrite_wb(WB_out_MEM_WB[0]), .ALUResult_ex(ALUResult_ex), 
+		        .RegWrite_mem(WB_out_EX_MEM[0]), .RegWrite_wb(WB_out_MEM_WB[0]), .ALUResult_ex(ALUResult_ex), 
                 .MemWriteData_ex(MemWriteData_ex), .ALU_A(ALU_A), .ALU_B(ALU_B));
 
     EX_MEM top_module6(.WB(WB_out_ID_EX), .Mem(Mem_out_ID_EX), .ALU(ALUResult_ex), .MemWriteData_ex(MemWriteData_ex), 

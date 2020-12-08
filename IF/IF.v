@@ -19,12 +19,12 @@ module IF(clk, reset, Branch, Jump, IFWrite, JumpAddr, Instruction_if, PC, IF_fl
         if (IF_flush) begin
             PC = JumpAddr;
         end
+        else if (reset) begin
+            PC = 0;
+        end
         else begin
             PC = PC + 4;
         end
-    end
-    always @(posedge clk & reset) begin
-        PC = 0;
     end
     InstructionROM inst1 (.addr(PC>>2), .dout(Instruction_if));
     initial

@@ -24,10 +24,27 @@ module ALU (A, B, ALUCode, ALUResult);
 	wire [31:0] d2, d3, d4, d5, d6, d7, d8;
 
 	reg signed[31:0] A_reg;
+	reg [3:0] sel;
+
+	always@(*) begin
+		case(ALUCode)
+			alu_add:sel=0;
+			alu_sub:sel=0;
+			alu_lui:sel=1;
+			alu_and:sel=2;
+			alu_xor:sel=3;
+			alu_or:sel=4;
+			alu_sll:sel=5;
+			alu_srl:sel=6;
+			alu_sra:sel=7;
+			alu_slt:sel=8;
+			alu_sltu:sel=9; 	
+			default:sel=0;
+      endcase
+	end
 
 	assign Binvert = {32{~(ALUCode == 0)}};
 	assign input_B = B^Binvert;
-
 	adder_32bits adder2(.a(A), .b(input_B), .ci(Binvert[0]), .co(), .s(sum));
 
 	assign d2 = B;
@@ -36,10 +53,13 @@ module ALU (A, B, ALUCode, ALUResult);
 	assign d5 = A | B;
 	assign d6 = A << B;
 	assign d7 = A >> B;
-	always @(*) begin A_reg = A; end
-	assign d8 = A_reg >>> B;
+	always @(*) begin 
+		A_reg = A; 
+		A_reg = A_reg >>> B;
+	end
+	assign d8 = A_reg;
 
 	assign slt = A[31] && (~B[31]) || (A[31]~^B[31]) && sum[31];
 	assign sltu = (~A[31]) && B[31] || (A[31]~^B[31]) && sum[31];
-	mux10_1 mux1(sum, d2, d3, d4, d5, d6, d7, d8, slt, sltu, ALUCode, ALUResult);
+	mux10_1 mux1(sum, d2, d3, d4, d5, d6, d7, d8, slt, sltu, sel, ALUResult);
 endmodule 

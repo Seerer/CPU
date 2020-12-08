@@ -9,7 +9,7 @@ module EX_MEM(WB, Mem, ALU, MemWriteData_ex, rdAddr_ex, WB_out_EX_MEM, we, d, AL
     output reg [31:0] ALUResult_mem, d;
     output reg [4:0] rdAddr_ex_out;
 
-    always@(clk) begin
+    always@(posedge clk) begin
         if (reset) begin
             WB_out_EX_MEM = 0;
             we = 0;
