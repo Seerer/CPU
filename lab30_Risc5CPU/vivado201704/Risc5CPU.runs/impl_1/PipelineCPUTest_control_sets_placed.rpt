@@ -1,0 +1,81 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Thu Dec 10 13:45:03 2020
+| Host         : DESKTOP-T0F3HF7 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file PipelineCPUTest_control_sets_placed.rpt
+| Design       : PipelineCPUTest
+| Device       : xc7a200t
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    44 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              89 |           36 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             317 |          138 |
+| Yes          | No                    | No                     |              62 |           27 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              96 |           32 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+|            Clock Signal           |                Enable Signal                |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++-----------------------------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+|  TMDS_inst/tmds_clk_IBUF_BUFG     |                                             |                                        |                1 |              3 |
+|  DCM_INST/inst/clk_out1           | step_pulse_inst/debounce/div_inst/E[0]      | step_pulse_inst/debounce/state/SR[0]   |                1 |              4 |
+|  TMDS_inst/tmds_clk_IBUF_BUFG     |                                             | TMDS_inst/clear                        |                1 |              5 |
+|  DCM_INST/inst/clk_out1           |                                             | sync_inst/EndLine                      |                4 |             10 |
+|  DCM_INST/inst/clk_out1           | sync_inst/EndLine                           | sync_inst/PosY_reg                     |                4 |             10 |
+|  DCM_INST/inst/clk_out1           |                                             | step_pulse_inst/debounce/div_inst/E[0] |                4 |             16 |
+|  CPUInst/top_module2/PC_reg[0][0] |                                             |                                        |                7 |             17 |
+|  CPUInst/top_module2/E[0]         |                                             |                                        |                8 |             24 |
+|  DCM_INST/inst/clk_out1           | sync_inst/ActiveArea                        | TMDS_inst/encode_blue/SR[0]            |                6 |             24 |
+|  TMDS_inst/tmds_clk_IBUF_BUFG     | TMDS_inst/clear                             |                                        |                7 |             30 |
+|  cpu_clk_BUFG                     | CPUInst/top_module4/PC_id_reg[31][0]        |                                        |               20 |             32 |
+|  cpu_clk_BUFG                     | CPUInst/top_module6/we                      |                                        |                8 |             32 |
+|  DCM_INST/inst/clk_out1           |                                             |                                        |               20 |             45 |
+|  cpu_clk_BUFG                     | CPUInst/top_module4/PC_id_reg[31][0]        | CPUInst/top_module2/reset0             |               21 |             58 |
+|  cpu_clk_BUFG                     | CPUInst/top_module8/rs2Data_ex_reg[31]_0[0] |                                        |               12 |             96 |
+|  cpu_clk_BUFG                     |                                             | CPUInst/top_module4/Reset0             |               69 |            143 |
+|  cpu_clk_BUFG                     |                                             | reset_IBUF                             |               60 |            143 |
++-----------------------------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 3      |                     1 |
+| 4      |                     1 |
+| 5      |                     1 |
+| 10     |                     2 |
+| 16+    |                    12 |
++--------+-----------------------+
+
+

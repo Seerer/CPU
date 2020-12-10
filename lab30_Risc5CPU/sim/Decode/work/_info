@@ -1,0 +1,130 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/89529/Desktop/sim/ALU
+vadder_32bits
+Z0 !s110 1606301791
+!i10b 1
+!s100 ^82=]dFjKIg]X2ZWA:Jm@1
+I0BZ^cec17RoKVUJE5Vf7_3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/89529/Desktop/sim/Decode
+Z3 w1606300461
+8C:/Users/89529/Desktop/sim/Decode/adder_32bits.v
+FC:/Users/89529/Desktop/sim/Decode/adder_32bits.v
+L0 1
+Z4 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1606301791.497000
+!s107 C:/Users/89529/Desktop/sim/Decode/adder_32bits.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/Decode/adder_32bits.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vadder_4bits
+R0
+!i10b 1
+!s100 G`VX3;:1RfGJS<?`Rm5GN2
+IljKl;34dSYXGaA2]1eMnk2
+R1
+R2
+R3
+8C:/Users/89529/Desktop/sim/Decode/adder_4bits.v
+FC:/Users/89529/Desktop/sim/Decode/adder_4bits.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1606301791.388000
+!s107 C:/Users/89529/Desktop/sim/Decode/adder_4bits.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/Decode/adder_4bits.v|
+!i113 0
+R5
+vadder_unit
+R0
+!i10b 1
+!s100 ><>51gn]hDoITKeo?`XD<0
+I?6ASnLzZ^_PSX@]D0IRYO2
+R1
+R2
+R3
+8C:/Users/89529/Desktop/sim/Decode/adder_unit.v
+FC:/Users/89529/Desktop/sim/Decode/adder_unit.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1606301791.585000
+!s107 C:/Users/89529/Desktop/sim/Decode/adder_unit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/Decode/adder_unit.v|
+!i113 0
+R5
+vDecode
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 >Zi2?LW_H_R7=aToQZAeI0
+ITWGz[fP>njbPY_VcMDio52
+R2
+w1606447105
+8C:/Users/89529/Desktop/sim/Decode/Decode.v
+FC:/Users/89529/Desktop/sim/Decode/Decode.v
+L0 6
+R4
+!s108 1606447110.051000
+!s107 C:/Users/89529/Desktop/sim/Decode/Decode.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/Decode/Decode.v|
+!i113 0
+R5
+n@decode
+vDecode_tb
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 N;hD__JI`LaklEXhWCo>01
+IC9C2Q8[Tdbg0O^RcAXLnW3
+R2
+w1570497285
+8C:/Users/89529/Desktop/sim/Decode/Decode_tb.v
+FC:/Users/89529/Desktop/sim/Decode/Decode_tb.v
+L0 6
+R4
+!s108 1606301791.692000
+!s107 C:/Users/89529/Desktop/sim/Decode/Decode_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/Decode/Decode_tb.v|
+!i113 0
+R5
+n@decode_tb
+vmux2_1
+!s110 1606302059
+!i10b 1
+!s100 ILN@PQeM22TYm<nTo?nkb3
+I<6lE`GIl4_j=K1X^O^iH10
+R1
+R2
+R3
+8C:/Users/89529/Desktop/sim/Decode/mux2_1.v
+FC:/Users/89529/Desktop/sim/Decode/mux2_1.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1606302059.888000
+!s107 C:/Users/89529/Desktop/sim/Decode/mux2_1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/Decode/mux2_1.v|
+!i113 0
+R5

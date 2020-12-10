@@ -1,0 +1,181 @@
+C:/Users/89529/Desktop/CPU/EX/mux10_1.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/mux10_1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux10_1
+
+Top level modules:
+	mux10_1
+
+} {} {}} C:/Users/89529/Desktop/sim/test-top/dist_mem_gen_v8_0.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/test-top/dist_mem_gen_v8_0.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dist_mem_gen_v8_0_12
+
+Top level modules:
+	dist_mem_gen_v8_0_12
+
+} {} {}} C:/Users/89529/Desktop/CPU/ID/Decode.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/ID/Decode.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Decode
+
+Top level modules:
+	Decode
+
+} {} {}} C:/Users/89529/Desktop/CPU/ID/mux2_1.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/ID/mux2_1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}} C:/Users/89529/Desktop/CPU/MEM/EX_MEM.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/MEM/EX_MEM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX_MEM
+
+Top level modules:
+	EX_MEM
+
+} {} {}} C:/Users/89529/Desktop/CPU/ID/Branch_Test.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/ID/Branch_Test.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Branch_Test
+
+Top level modules:
+	Branch_Test
+
+} {} {}} C:/Users/89529/Desktop/CPU/EX/adder_4bits.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/adder_4bits.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_4bits
+
+Top level modules:
+	adder_4bits
+
+} {} {}} C:/Users/89529/Desktop/sim/test-top/glbl.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/test-top/glbl.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module glbl
+
+Top level modules:
+	glbl
+
+} {} {}} C:/Users/89529/Desktop/sim/test-top/Risc5CPU_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/test-top/Risc5CPU_tb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Risc5CPU_tb_v
+
+Top level modules:
+	Risc5CPU_tb_v
+
+} {} {}} C:/Users/89529/Desktop/sim/test-top/DataRAM_sim_netlist.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/test-top/DataRAM_sim_netlist.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module DataRAM
+-- Compiling module DataRAM_dist_mem_gen_v8_0_12
+-- Compiling module DataRAM_dist_mem_gen_v8_0_12_synth
+-- Compiling module DataRAM_spram
+-- Compiling module glbl
+
+Top level modules:
+	DataRAM
+	glbl
+
+} {} {}} C:/Users/89529/Desktop/CPU/ID/Registers.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/ID/Registers.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Registers
+
+Top level modules:
+	Registers
+
+} {} {}} C:/Users/89529/Desktop/CPU/MEM/ID_EX.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/MEM/ID_EX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ID_EX
+
+Top level modules:
+	ID_EX
+
+} {} {}} C:/Users/89529/Desktop/CPU/ID/RGBRegisters.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/ID/RGBRegisters.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module RGBRegisters
+
+Top level modules:
+	RGBRegisters
+
+} {} {}} C:/Users/89529/Desktop/CPU/EX/EX.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/EX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX
+
+Top level modules:
+	EX
+
+} {} {}} C:/Users/89529/Desktop/CPU/MEM/IF_ID.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/MEM/IF_ID.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IF_ID
+
+Top level modules:
+	IF_ID
+
+} {} {}} C:/Users/89529/Desktop/CPU/ID/ID.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/ID/ID.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ID
+
+Top level modules:
+	ID
+
+} {} {}} C:/Users/89529/Desktop/CPU/EX/adder_32bits.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/adder_32bits.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_32bits
+
+Top level modules:
+	adder_32bits
+
+} {} {}} C:/Users/89529/Desktop/CPU/DataRAM.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/DataRAM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module DataRAM
+
+Top level modules:
+	DataRAM
+
+} {} {}} C:/Users/89529/Desktop/CPU/EX/adder_unit.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/adder_unit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_unit
+
+Top level modules:
+	adder_unit
+
+} {} {}} C:/Users/89529/Desktop/CPU/IF/IF.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/IF/IF.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IF
+
+Top level modules:
+	IF
+
+} {} {}} C:/Users/89529/Desktop/CPU/MEM/MEM_WB.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/MEM/MEM_WB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
+
+} {} {}} C:/Users/89529/Desktop/CPU/Risc5CPU.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/Risc5CPU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Risc5CPU
+
+Top level modules:
+	Risc5CPU
+
+} {} {}} C:/Users/89529/Desktop/CPU/EX/ALU.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/ALU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/89529/Desktop/CPU/IF/InstructionROM.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/IF/InstructionROM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module InstructionROM
+
+Top level modules:
+	InstructionROM
+
+} {} {}} C:/Users/89529/Desktop/CPU/EX/DataRam.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/CPU/EX/DataRam.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module DataRAM
+
+Top level modules:
+	DataRAM
+
+} {} {}}

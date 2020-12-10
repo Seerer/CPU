@@ -1,0 +1,43 @@
+C:/Users/89529/Desktop/sim/Decode/adder_unit.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/Decode/adder_unit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_unit
+
+Top level modules:
+	adder_unit
+
+} {} {}} C:/Users/89529/Desktop/sim/Decode/mux2_1.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/Decode/mux2_1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}} C:/Users/89529/Desktop/sim/Decode/Decode.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/Decode/Decode.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Decode
+
+Top level modules:
+	Decode
+
+} {} {}} C:/Users/89529/Desktop/sim/Decode/Decode_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/Decode/Decode_tb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Decode_tb
+
+Top level modules:
+	Decode_tb
+
+} {} {}} C:/Users/89529/Desktop/sim/Decode/adder_4bits.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/Decode/adder_4bits.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_4bits
+
+Top level modules:
+	adder_4bits
+
+} {} {}} C:/Users/89529/Desktop/sim/Decode/adder_32bits.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/Decode/adder_32bits.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_32bits
+
+Top level modules:
+	adder_32bits
+
+} {} {}}

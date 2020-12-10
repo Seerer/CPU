@@ -1,0 +1,70 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/89529/Desktop/sim/Decode
+vIF
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 iZA4BLJ47=@l2EY2_bO[z2
+IzH[ob5LezJ[nn7XWgMVO]0
+Z1 dC:/Users/89529/Desktop/sim/IF
+Z2 w1606300461
+8C:/Users/89529/Desktop/sim/IF/IF.v
+FC:/Users/89529/Desktop/sim/IF/IF.v
+L0 6
+Z3 OL;L;10.4;61
+!s108 1606302276.349000
+!s107 C:/Users/89529/Desktop/sim/IF/IF.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/IF/IF.v|
+!i113 0
+Z4 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@i@f
+vIF_tb
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 GhDaI0=:>OJ<^PL8kUSRO2
+IBNd<91CHK@UYcO>aE0CIT1
+R1
+w1570497635
+8C:/Users/89529/Desktop/sim/IF/IF_tb.v
+FC:/Users/89529/Desktop/sim/IF/IF_tb.v
+L0 6
+R3
+!s108 1606302276.436000
+!s107 C:/Users/89529/Desktop/sim/IF/IF_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/IF/IF_tb.v|
+!i113 0
+R4
+n@i@f_tb
+vInstructionROM
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 fIAIb:aci?KBgHhggk8KP1
+Ih=i=N?Ib00OaNQ1JRLbel1
+R1
+R2
+8C:/Users/89529/Desktop/sim/IF/InstructionROM.v
+FC:/Users/89529/Desktop/sim/IF/InstructionROM.v
+L0 19
+R3
+!s108 1606302276.251000
+!s107 C:/Users/89529/Desktop/sim/IF/InstructionROM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/89529/Desktop/sim/IF/InstructionROM.v|
+!i113 0
+R4
+n@instruction@r@o@m

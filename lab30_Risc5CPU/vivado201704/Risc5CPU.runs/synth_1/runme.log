@@ -1,0 +1,710 @@
+
+*** Running vivado
+    with args -log PipelineCPUTest.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PipelineCPUTest.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source PipelineCPUTest.tcl -notrace
+Command: synth_design -top PipelineCPUTest -part xc7a200tfbg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 24024 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 355.277 ; gain = 99.848
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'PipelineCPUTest' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:7]
+INFO: [Synth 8-638] synthesizing module 'DCM_PLL' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/realtime/DCM_PLL_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'DCM_PLL' (1#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/realtime/DCM_PLL_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'button_process_unit' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/button_process_unit.v:4]
+INFO: [Synth 8-256] done synthesizing module 'button_process_unit' (2#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/button_process_unit.v:4]
+INFO: [Synth 8-638] synthesizing module 'Risc5CPU' [C:/Users/89529/Desktop/src/Risc5CPU.v:6]
+INFO: [Synth 8-638] synthesizing module 'IF' [C:/Users/89529/Desktop/src/IF.v:6]
+INFO: [Synth 8-638] synthesizing module 'InstructionROM' [C:/Users/89529/Desktop/src/InstructionROM.v:19]
+INFO: [Synth 8-256] done synthesizing module 'InstructionROM' (3#1) [C:/Users/89529/Desktop/src/InstructionROM.v:19]
+WARNING: [Synth 8-689] width (32) of port connection 'addr' does not match port width (6) of module 'InstructionROM' [C:/Users/89529/Desktop/src/IF.v:31]
+INFO: [Synth 8-256] done synthesizing module 'IF' (4#1) [C:/Users/89529/Desktop/src/IF.v:6]
+INFO: [Synth 8-638] synthesizing module 'IF_ID' [C:/Users/89529/Desktop/src/IF_ID.v:1]
+INFO: [Synth 8-256] done synthesizing module 'IF_ID' (5#1) [C:/Users/89529/Desktop/src/IF_ID.v:1]
+INFO: [Synth 8-638] synthesizing module 'ID' [C:/Users/89529/Desktop/src/ID.v:6]
+INFO: [Synth 8-638] synthesizing module 'Registers' [C:/Users/89529/Desktop/src/Registers.v:2]
+INFO: [Synth 8-638] synthesizing module 'RGBRegisters' [C:/Users/89529/Desktop/src/RGBRegisters.v:1]
+INFO: [Synth 8-256] done synthesizing module 'RGBRegisters' (6#1) [C:/Users/89529/Desktop/src/RGBRegisters.v:1]
+INFO: [Synth 8-638] synthesizing module 'mux2_1' [C:/Users/89529/Desktop/src/mux2_1.v:1]
+	Parameter in_width bound to: 31 - type: integer 
+	Parameter out_width bound to: 31 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux2_1' (7#1) [C:/Users/89529/Desktop/src/mux2_1.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Registers' (8#1) [C:/Users/89529/Desktop/src/Registers.v:2]
+INFO: [Synth 8-638] synthesizing module 'Decode' [C:/Users/89529/Desktop/src/Decode.v:6]
+	Parameter R_type_op bound to: 7'b0110011 
+	Parameter I_type_op bound to: 7'b0010011 
+	Parameter SB_type_op bound to: 7'b1100011 
+	Parameter LW_op bound to: 7'b0000011 
+	Parameter JALR_op bound to: 7'b1100111 
+	Parameter SW_op bound to: 7'b0100011 
+	Parameter LUI_op bound to: 7'b0110111 
+	Parameter AUIPC_op bound to: 7'b0010111 
+	Parameter JAL_op bound to: 7'b1101111 
+	Parameter ADD_funct3 bound to: 3'b000 
+	Parameter SUB_funct3 bound to: 3'b000 
+	Parameter SLL_funct3 bound to: 3'b001 
+	Parameter SLT_funct3 bound to: 3'b010 
+	Parameter SLTU_funct3 bound to: 3'b011 
+	Parameter XOR_funct3 bound to: 3'b100 
+	Parameter SRL_funct3 bound to: 3'b101 
+	Parameter SRA_funct3 bound to: 3'b101 
+	Parameter OR_funct3 bound to: 3'b110 
+	Parameter AND_funct3 bound to: 3'b111 
+	Parameter ADDI_funct3 bound to: 3'b000 
+	Parameter SLLI_funct3 bound to: 3'b001 
+	Parameter SLTI_funct3 bound to: 3'b010 
+	Parameter SLTIU_funct3 bound to: 3'b011 
+	Parameter XORI_funct3 bound to: 3'b100 
+	Parameter SRLI_funct3 bound to: 3'b101 
+	Parameter SRAI_funct3 bound to: 3'b101 
+	Parameter ORI_funct3 bound to: 3'b101 
+	Parameter ANDI_funct3 bound to: 3'b111 
+	Parameter alu_add bound to: 4'b0000 
+	Parameter alu_sub bound to: 4'b0001 
+	Parameter alu_lui bound to: 4'b0010 
+	Parameter alu_and bound to: 4'b0011 
+	Parameter alu_xor bound to: 4'b0100 
+	Parameter alu_or bound to: 4'b0101 
+	Parameter alu_sll bound to: 4'b0110 
+	Parameter alu_srl bound to: 4'b0111 
+	Parameter alu_sra bound to: 4'b1000 
+	Parameter alu_slt bound to: 4'b1001 
+	Parameter alu_sltu bound to: 4'b1010 
+INFO: [Synth 8-256] done synthesizing module 'Decode' (9#1) [C:/Users/89529/Desktop/src/Decode.v:6]
+INFO: [Synth 8-638] synthesizing module 'Branch_Test' [C:/Users/89529/Desktop/src/Branch_Test.v:4]
+	Parameter BEQ_funct3 bound to: 3'b000 
+	Parameter BNE_funct3 bound to: 3'b001 
+	Parameter BLT_funct3 bound to: 3'b100 
+	Parameter BGE_funct3 bound to: 3'b101 
+	Parameter BLTU_funct3 bound to: 3'b110 
+	Parameter BGEU_funct3 bound to: 3'b111 
+INFO: [Synth 8-638] synthesizing module 'adder_32bits' [C:/Users/89529/Desktop/src/adder_32bits.v:1]
+INFO: [Synth 8-638] synthesizing module 'adder_4bits' [C:/Users/89529/Desktop/src/adder_4bits.v:1]
+INFO: [Synth 8-256] done synthesizing module 'adder_4bits' (10#1) [C:/Users/89529/Desktop/src/adder_4bits.v:1]
+INFO: [Synth 8-638] synthesizing module 'adder_unit' [C:/Users/89529/Desktop/src/adder_unit.v:1]
+INFO: [Synth 8-638] synthesizing module 'mux2_1__parameterized0' [C:/Users/89529/Desktop/src/mux2_1.v:1]
+	Parameter in_width bound to: 3 - type: integer 
+	Parameter out_width bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux2_1__parameterized0' (10#1) [C:/Users/89529/Desktop/src/mux2_1.v:1]
+INFO: [Synth 8-256] done synthesizing module 'adder_unit' (11#1) [C:/Users/89529/Desktop/src/adder_unit.v:1]
+INFO: [Synth 8-256] done synthesizing module 'adder_32bits' (12#1) [C:/Users/89529/Desktop/src/adder_32bits.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Branch_Test' (13#1) [C:/Users/89529/Desktop/src/Branch_Test.v:4]
+INFO: [Synth 8-256] done synthesizing module 'ID' (14#1) [C:/Users/89529/Desktop/src/ID.v:6]
+INFO: [Synth 8-638] synthesizing module 'ID_EX' [C:/Users/89529/Desktop/src/ID_EX.v:1]
+INFO: [Synth 8-256] done synthesizing module 'ID_EX' (15#1) [C:/Users/89529/Desktop/src/ID_EX.v:1]
+INFO: [Synth 8-638] synthesizing module 'EX' [C:/Users/89529/Desktop/src/EX.v:6]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/89529/Desktop/src/ALU.v:1]
+	Parameter alu_add bound to: 4'b0000 
+	Parameter alu_sub bound to: 4'b0001 
+	Parameter alu_lui bound to: 4'b0010 
+	Parameter alu_and bound to: 4'b0011 
+	Parameter alu_xor bound to: 4'b0100 
+	Parameter alu_or bound to: 4'b0101 
+	Parameter alu_sll bound to: 4'b0110 
+	Parameter alu_srl bound to: 4'b0111 
+	Parameter alu_sra bound to: 4'b1000 
+	Parameter alu_slt bound to: 4'b1001 
+	Parameter alu_sltu bound to: 4'b1010 
+INFO: [Synth 8-638] synthesizing module 'mux10_1' [C:/Users/89529/Desktop/src/mux10_1.v:1]
+INFO: [Synth 8-256] done synthesizing module 'mux10_1' (16#1) [C:/Users/89529/Desktop/src/mux10_1.v:1]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (17#1) [C:/Users/89529/Desktop/src/ALU.v:1]
+INFO: [Synth 8-256] done synthesizing module 'EX' (18#1) [C:/Users/89529/Desktop/src/EX.v:6]
+INFO: [Synth 8-638] synthesizing module 'EX_MEM' [C:/Users/89529/Desktop/src/EX_MEM.v:2]
+INFO: [Synth 8-256] done synthesizing module 'EX_MEM' (19#1) [C:/Users/89529/Desktop/src/EX_MEM.v:2]
+INFO: [Synth 8-638] synthesizing module 'DataRAM' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/realtime/DataRAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DataRAM' (20#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/realtime/DataRAM_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'a' does not match port width (6) of module 'DataRAM' [C:/Users/89529/Desktop/src/Risc5CPU.v:88]
+INFO: [Synth 8-638] synthesizing module 'MEM_WB' [C:/Users/89529/Desktop/src/MEM_WB.v:1]
+INFO: [Synth 8-256] done synthesizing module 'MEM_WB' (21#1) [C:/Users/89529/Desktop/src/MEM_WB.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Risc5CPU' (22#1) [C:/Users/89529/Desktop/src/Risc5CPU.v:6]
+INFO: [Synth 8-638] synthesizing module 'syncGenarator' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:5]
+	Parameter H_ACTIVE bound to: 640 - type: integer 
+	Parameter H_FRONT bound to: 16 - type: integer 
+	Parameter H_SYNC bound to: 96 - type: integer 
+	Parameter H_BACK bound to: 48 - type: integer 
+	Parameter V_ACTIVE bound to: 480 - type: integer 
+	Parameter V_FRONT bound to: 11 - type: integer 
+	Parameter V_SYNC bound to: 2 - type: integer 
+	Parameter V_BACK bound to: 31 - type: integer 
+	Parameter H_TOTAL bound to: 800 - type: integer 
+	Parameter V_TOTAL bound to: 524 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'syncGenarator' (23#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:5]
+INFO: [Synth 8-638] synthesizing module 'vga_data' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/vga_data.v:6]
+INFO: [Synth 8-638] synthesizing module 'DisplayROM' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/realtime/DisplayROM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DisplayROM' (24#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/realtime/DisplayROM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'vga_data' (25#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/vga_data.v:6]
+INFO: [Synth 8-638] synthesizing module 'TMDSencode' [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/TMDSencode.v:2]
+INFO: [Synth 8-256] done synthesizing module 'TMDSencode' (26#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/TMDSencode.v:2]
+INFO: [Synth 8-638] synthesizing module 'OBUFDS' [E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:27284]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-256] done synthesizing module 'OBUFDS' (27#1) [E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:27284]
+INFO: [Synth 8-256] done synthesizing module 'PipelineCPUTest' (28#1) [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:7]
+WARNING: [Synth 8-3331] design vga_data has unconnected port y_pos[0]
+WARNING: [Synth 8-3331] design EX_MEM has unconnected port Mem[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 407.754 ; gain = 152.324
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 407.754 ; gain = 152.324
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7a200tfbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp3/DCM_PLL_in_context.xdc] for cell 'DCM_INST'
+Finished Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp3/DCM_PLL_in_context.xdc] for cell 'DCM_INST'
+Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp4/DisplayROM_in_context.xdc] for cell 'VgaData/char_tab'
+Finished Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp4/DisplayROM_in_context.xdc] for cell 'VgaData/char_tab'
+Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp5/DataRAM_in_context.xdc] for cell 'CPUInst/top_module7'
+Finished Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp5/DataRAM_in_context.xdc] for cell 'CPUInst/top_module7'
+Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/constrs_1/imports/PipelineCPU.srcs/VgaCPU.xdc]
+Finished Parsing XDC File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/constrs_1/imports/PipelineCPU.srcs/VgaCPU.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/constrs_1/imports/PipelineCPU.srcs/VgaCPU.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PipelineCPUTest_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/PipelineCPUTest_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  OBUFDS => OBUFDS: 4 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 806.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 806.992 ; gain = 551.563
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tfbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 806.992 ; gain = 551.563
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp3/DCM_PLL_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/.Xil/Vivado-7984-DESKTOP-T0F3HF7/dcp3/DCM_PLL_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for CPUInst/top_module7. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DCM_INST. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for VgaData/char_tab. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 806.992 ; gain = 551.563
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "dout" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element PosX_reg_reg was removed.  [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:27]
+WARNING: [Synth 8-6014] Unused sequential element PosY_reg_reg was removed.  [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:28]
+WARNING: [Synth 8-327] inferring latch for variable 'Imm_reg' [C:/Users/89529/Desktop/src/Decode.v:187]
+WARNING: [Synth 8-327] inferring latch for variable 'offset_reg' [C:/Users/89529/Desktop/src/Decode.v:196]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 806.992 ; gain = 551.563
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 1     
+	   3 Input      1 Bit       Adders := 180   
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 11    
+	               10 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 22    
+	  21 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 59    
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module PipelineCPUTest 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module InstructionROM 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module IF 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module IF_ID 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+Module RGBRegisters 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module mux2_1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Decode 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	  21 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module adder_4bits 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      1 Bit       Adders := 4     
+Module mux2_1__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module Branch_Test 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module ID 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module ID_EX 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+Module ALU 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1     
+Module EX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 7     
+Module EX_MEM 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module MEM_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+Module Risc5CPU 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module syncGenarator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module vga_data 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 38    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element sync_inst/PosX_reg_reg was removed.  [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:27]
+WARNING: [Synth 8-6014] Unused sequential element sync_inst/PosY_reg_reg was removed.  [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:28]
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[31]' (LD) to 'CPUInst/top_module3/d1/offset_reg[28]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[28]' (LD) to 'CPUInst/top_module3/d1/offset_reg[29]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[29]' (LD) to 'CPUInst/top_module3/d1/offset_reg[30]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[30]' (LD) to 'CPUInst/top_module3/d1/offset_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[27]' (LD) to 'CPUInst/top_module3/d1/offset_reg[24]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[24]' (LD) to 'CPUInst/top_module3/d1/offset_reg[25]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[25]' (LD) to 'CPUInst/top_module3/d1/offset_reg[26]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[26]' (LD) to 'CPUInst/top_module3/d1/offset_reg[23]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[23]' (LD) to 'CPUInst/top_module3/d1/offset_reg[20]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[20]' (LD) to 'CPUInst/top_module3/d1/offset_reg[21]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[21]' (LD) to 'CPUInst/top_module3/d1/offset_reg[22]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/WB_out_ID_EX_reg[1]' (FDR) to 'CPUInst/top_module4/Mem_out_ID_EX_reg[0]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module2/Instruction_id_reg[28]' (FDRE) to 'CPUInst/top_module2/Instruction_id_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module2/Instruction_id_reg[24]' (FDRE) to 'CPUInst/top_module2/Instruction_id_reg[23]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module2/Instruction_id_reg[29]' (FDRE) to 'CPUInst/top_module2/Instruction_id_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module2/Instruction_id_reg[1]' (FDRE) to 'CPUInst/top_module2/Instruction_id_reg[0]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module2/Instruction_id_reg[18]' (FDRE) to 'CPUInst/top_module2/Instruction_id_reg[19]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/rs2Addr_ex_reg[3]' (FDR) to 'CPUInst/top_module4/rs2Addr_ex_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/rs1Addr_ex_reg[3]' (FDR) to 'CPUInst/top_module4/rs1Addr_ex_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module2/Instruction_id_reg[31]' (FDRE) to 'CPUInst/top_module2/Instruction_id_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[22]' (LD) to 'CPUInst/top_module3/d1/offset_reg[9]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[19]' (LD) to 'CPUInst/top_module3/d1/offset_reg[18]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[8]' (LD) to 'CPUInst/top_module3/d1/offset_reg[9]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/offset_reg[9]' (LD) to 'CPUInst/top_module3/d1/offset_reg[7]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[31]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[29]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[29]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[28]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[28]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[24]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[23]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[19]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[18]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[11]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[9]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[9]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[8]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module3/d1/Imm_reg[8]' (LD) to 'CPUInst/top_module3/d1/Imm_reg[7]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[31]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[29]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[28]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[27]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[24]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[23]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[19]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[18]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[11]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[7]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[9]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[7]'
+INFO: [Synth 8-3886] merging instance 'CPUInst/top_module4/Imm_ex_reg[8]' (FDR) to 'CPUInst/top_module4/Imm_ex_reg[7]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 806.992 ; gain = 551.563
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++--------------------+------------------+-----------+----------------------+---------------+
+|Module Name         | RTL Object       | Inference | Size (Depth x Width) | Primitives    | 
++--------------------+------------------+-----------+----------------------+---------------+
+|CPUInst/top_module3 | r1/rgb1/regs_reg | Implied   | 32 x 32              | RAM32M x 12   | 
++--------------------+------------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'DCM_INST/clk_out1' to pin 'DCM_INST/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'DCM_INST/clk_out2' to pin 'DCM_INST/bbstub_clk_out2/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 849.391 ; gain = 593.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 978.504 ; gain = 723.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++--------------------+------------------+-----------+----------------------+---------------+
+|Module Name         | RTL Object       | Inference | Size (Depth x Width) | Primitives    | 
++--------------------+------------------+-----------+----------------------+---------------+
+|CPUInst/top_module3 | r1/rgb1/regs_reg | Implied   | 32 x 32              | RAM32M x 12   | 
++--------------------+------------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |DCM_PLL             |         1|
+|2     |button_process_unit |         1|
+|3     |TMDSencode          |         1|
+|4     |DataRAM             |         1|
+|5     |DisplayROM          |         1|
++------+--------------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |DCM_PLL             |     1|
+|2     |DataRAM             |     1|
+|3     |DisplayROM          |     1|
+|4     |TMDSencode          |     1|
+|5     |button_process_unit |     1|
+|6     |BUFG                |     1|
+|7     |CARRY4              |    16|
+|8     |LUT1                |     3|
+|9     |LUT2                |    94|
+|10    |LUT3                |   147|
+|11    |LUT4                |   155|
+|12    |LUT5                |   380|
+|13    |LUT6                |   699|
+|14    |MUXF7               |    13|
+|15    |RAM32M              |    12|
+|16    |FDRE                |   397|
+|17    |LD                  |    41|
+|18    |IBUF                |     3|
+|19    |OBUFDS              |     4|
++------+--------------------+------+
+
+Report Instance Areas: 
++------+----------------+--------------+------+
+|      |Instance        |Module        |Cells |
++------+----------------+--------------+------+
+|1     |top             |              |  2012|
+|2     |  CPUInst       |Risc5CPU      |  1828|
+|3     |    top_module1 |IF            |    67|
+|4     |    top_module2 |IF_ID         |   257|
+|5     |    top_module3 |ID            |   102|
+|6     |      b1        |Branch_Test   |    48|
+|7     |      d1        |Decode        |    41|
+|8     |      r1        |Registers     |    13|
+|9     |        rgb1    |RGBRegisters  |    13|
+|10    |    top_module4 |ID_EX         |   932|
+|11    |    top_module6 |EX_MEM        |   115|
+|12    |    top_module8 |MEM_WB        |   319|
+|13    |  VgaData       |vga_data      |    11|
+|14    |  sync_inst     |syncGenarator |   156|
++------+----------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 1011.914 ; gain = 756.484
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:16 ; elapsed = 00:01:26 . Memory (MB): peak = 1011.914 ; gain = 357.246
+Synthesis Optimization Complete : Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 1011.914 ; gain = 756.484
+INFO: [Project 1-571] Translating synthesized netlist
+Parsing EDIF File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/button_process_unit.edf]
+Finished Parsing EDIF File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/button_process_unit.edf]
+Parsing EDIF File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/TMDSencode.edf]
+Finished Parsing EDIF File [C:/Users/89529/Desktop/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/TMDSencode.edf]
+INFO: [Netlist 29-17] Analyzing 147 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/ActiveArea_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[0]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[1]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[2]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[3]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[4]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[5]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[6]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/blue_IBUF[7]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[0]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[1]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[2]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[3]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[4]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[5]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[6]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/green_IBUF[7]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/hSync_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/pixel_clk_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[0]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[1]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[2]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[3]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[4]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[5]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[6]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/red_IBUF[7]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/reset_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/tmds_clk_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. TMDS_inst/vSync_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-35] Removing redundant IBUF, step_pulse_inst/ButtonIn_IBUF_inst, from the path connected to top-level port: step 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. step_pulse_inst/clk_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. step_pulse_inst/reset_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. TMDS_inst/TMDSch0_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. TMDS_inst/TMDSch1_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. TMDS_inst/TMDSch2_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. step_pulse_inst/ButtonOut_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 57 instances were transformed.
+  LD => LDCE: 41 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 4 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+117 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:36 ; elapsed = 00:01:42 . Memory (MB): peak = 1011.914 ; gain = 767.957
+INFO: [Common 17-1381] The checkpoint 'C:/Users/89529/Desktop/vivado201704/Risc5CPU.runs/synth_1/PipelineCPUTest.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file PipelineCPUTest_utilization_synth.rpt -pb PipelineCPUTest_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.131 . Memory (MB): peak = 1011.914 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 10 13:43:31 2020...

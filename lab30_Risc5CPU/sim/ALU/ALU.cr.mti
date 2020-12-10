@@ -1,0 +1,50 @@
+C:/Users/89529/Desktop/sim/ALU/adder_4bits.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/adder_4bits.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_4bits
+
+Top level modules:
+	adder_4bits
+
+} {} {}} C:/Users/89529/Desktop/sim/ALU/adder_32bits.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/adder_32bits.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_32bits
+
+Top level modules:
+	adder_32bits
+
+} {} {}} C:/Users/89529/Desktop/sim/ALU/ALU.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/ALU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/89529/Desktop/sim/ALU/mux10_1.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/mux10_1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux10_1
+
+Top level modules:
+	mux10_1
+
+} {} {}} C:/Users/89529/Desktop/sim/ALU/adder_unit.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/adder_unit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adder_unit
+
+Top level modules:
+	adder_unit
+
+} {} {}} C:/Users/89529/Desktop/sim/ALU/ALU_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/ALU_tb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU_tb
+
+Top level modules:
+	ALU_tb
+
+} {} {}} C:/Users/89529/Desktop/sim/ALU/mux2_1.v {1 {vlog -work work -vopt -stats=none C:/Users/89529/Desktop/sim/ALU/mux2_1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux2_1
+
+Top level modules:
+	mux2_1
+
+} {} {}}

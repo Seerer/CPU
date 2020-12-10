@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Dec 10 13:06:28 2020
+# Process ID: 22480
+# Current directory: C:/Users/89529/Desktop/vivado201704
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11124 C:\Users\89529\Desktop\vivado201704\Risc5CPU.xpr
+# Log file: C:/Users/89529/Desktop/vivado201704/vivado.log
+# Journal file: C:/Users/89529/Desktop/vivado201704\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/89529/Desktop/vivado201704/Risc5CPU.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/89529/Desktop/src/RGBRegisters.v C:/Users/89529/Desktop/src/DataRAM_sim_netlist.v C:/Users/89529/Desktop/src/ID_EX.v C:/Users/89529/Desktop/src/adder_unit.v C:/Users/89529/Desktop/src/Branch_Test.v C:/Users/89529/Desktop/src/Decode.v C:/Users/89529/Desktop/src/IF_ID.v C:/Users/89529/Desktop/src/Risc5CPU.v C:/Users/89529/Desktop/src/mux10_1.v C:/Users/89529/Desktop/src/Registers.v C:/Users/89529/Desktop/src/EX.v C:/Users/89529/Desktop/src/InstructionROM.v C:/Users/89529/Desktop/src/IF.v C:/Users/89529/Desktop/src/ID.v C:/Users/89529/Desktop/src/Risc5CPU_tb.v C:/Users/89529/Desktop/src/adder_4bits.v C:/Users/89529/Desktop/src/adder_32bits.v C:/Users/89529/Desktop/src/EX_MEM.v C:/Users/89529/Desktop/src/mux2_1.v C:/Users/89529/Desktop/src/DataRam.v C:/Users/89529/Desktop/src/ALU.v C:/Users/89529/Desktop/src/MEM_WB.v}
+update_compile_order -fileset sources_1
+reset_run DisplayROM_synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+open_run impl_1
