@@ -41,7 +41,7 @@ module Risc5CPU(clk, reset, JumpFlag, Instruction_id, ALU_A,
     //EX_MEM parameters
     wire [4:0] rdAddr_mem;
     wire [1:0] WB_out_EX_MEM;
-    wire [1:0] Mem_out_EX_MEM;
+    wire Mem_out_EX_MEM;
     wire [31:0] d;
     wire [31:0] ALUResult_mem;
 
